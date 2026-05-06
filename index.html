@@ -1737,21 +1737,8 @@
 
   <div class="access-form" id="accessForm">
     <h3 data-i18n="access.title">Vraag toegang aan tot Cowork</h3>
-    <p class="access-intro" data-i18n="access.intro">Gefeliciteerd — je hebt de kennistest perfect afgerond! Vul eerst het formulier in via de knop hieronder. Kom daarna terug en vink aan dat je klaar bent om de toegangsaanvraag te starten.</p>
-
-    <div style="margin: 24px 0;">
-      <a class="form-submit" href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=ii7C3QCRQU-L5EctcoQmxTz2Wi0DHYFOj0XPWQZvcw1UNVY1QUczWVFCN1pNOTNFTjVIU1VLOVpTUi4u" target="_blank" rel="noopener" data-i18n="access.openForm" style="display:inline-block; text-decoration:none;">Vul het formulier in →</a>
-    </div>
-
-    <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:15px; margin-bottom:24px;">
-      <input type="checkbox" id="formDoneCheck" onchange="toggleAccessButton()" style="width:18px; height:18px; cursor:pointer;">
-      <span data-i18n="access.confirm">Ik heb het formulier ingevuld</span>
-    </label>
-
-    <div id="accessButtonWrap" style="display:none;">
-      <p data-i18n="access.sent" style="margin-bottom:12px;">Je kan nu je toegangsverzoek indienen via MyAccess.</p>
-      <a class="access-button" href="https://myaccess.microsoft.com/@damen.onmicrosoft.com#/access-packages/aef24c7b-039a-4f5e-9c65-733790a1fcef" target="_blank" rel="noopener" data-i18n="access.button">Vraag toegang aan tot Cowork →</a>
-    </div>
+    <p class="access-intro" data-i18n="access.intro">Gefeliciteerd — je hebt de kennistest perfect afgerond! Klik op de knop hieronder om toegang aan te vragen via MyAccess.</p>
+    <a class="access-button" href="https://myaccess.microsoft.com/@damen.onmicrosoft.com#/access-packages/aef24c7b-039a-4f5e-9c65-733790a1fcef" target="_blank" rel="noopener" data-i18n="access.button">Vraag toegang aan tot Cowork →</a>
   </div>
 </section>
 
@@ -2090,9 +2077,7 @@ const I18N = {
     "footer.line2": "Gebaseerd op Microsoft Learn-documentatie · Cowork is een preview-feature; capaciteiten kunnen wijzigen.",
 
     "access.title": "Vraag toegang aan tot Cowork",
-    "access.intro": "Gefeliciteerd — je hebt de kennistest perfect afgerond! Vul eerst het formulier in via de knop hieronder. Kom daarna terug en vink aan dat je klaar bent om de toegangsaanvraag te starten.",
-    "access.openForm": "Vul het formulier in →",
-    "access.confirm": "Ik heb het formulier ingevuld",
+    "access.intro": "Gefeliciteerd — je hebt de kennistest perfect afgerond! Klik op de knop hieronder om toegang aan te vragen via MyAccess.",
     "access.name": "Je naam",
     "access.exp": "Wat is je eerdere ervaring met AI-tools?",
     "access.exp1": "Geen ervaring — ik begin net",
@@ -2526,9 +2511,7 @@ const I18N = {
     "footer.line2": "Based on Microsoft Learn documentation · Cowork is a preview feature; capabilities may change.",
 
     "access.title": "Request access to Cowork",
-    "access.intro": "Congratulations — you passed the knowledge test with a perfect score! First fill in the form via the button below. Then come back and tick the box to start your access request.",
-    "access.openForm": "Fill in the form →",
-    "access.confirm": "I have filled in the form",
+    "access.intro": "Congratulations — you passed the knowledge test with a perfect score! Click the button below to request access via MyAccess.",
     "access.name": "Your name",
     "access.exp": "What is your prior experience with AI tools?",
     "access.exp1": "None — I'm just starting out",
@@ -2962,9 +2945,7 @@ const I18N = {
     "footer.line2": "Basado en documentación de Microsoft Learn · Cowork es una función preview; las capacidades pueden cambiar.",
 
     "access.title": "Solicitar acceso a Cowork",
-    "access.intro": "¡Enhorabuena — has superado el test con una puntuación perfecta! Primero rellena el formulario con el botón de abajo. Luego vuelve y marca la casilla para iniciar tu solicitud de acceso.",
-    "access.openForm": "Rellena el formulario →",
-    "access.confirm": "He rellenado el formulario",
+    "access.intro": "¡Enhorabuena — has superado el test con una puntuación perfecta! Haz clic en el botón de abajo para solicitar acceso a través de MyAccess.",
     "access.name": "Tu nombre",
     "access.exp": "¿Cuál es tu experiencia previa con herramientas de IA?",
     "access.exp1": "Ninguna — acabo de empezar",
@@ -3241,16 +3222,8 @@ function showResult() {
 
 function restartQuiz() {
   document.getElementById('accessForm').classList.remove('show');
-  const cb = document.getElementById('formDoneCheck');
-  if (cb) cb.checked = false;
-  document.getElementById('accessButtonWrap').style.display = 'none';
   renderQuiz();
   document.getElementById('sec-quiz').scrollIntoView({behavior:'smooth'});
-}
-
-function toggleAccessButton() {
-  const checked = document.getElementById('formDoneCheck').checked;
-  document.getElementById('accessButtonWrap').style.display = checked ? 'block' : 'none';
 }
 
 applyLang('nl');

@@ -3309,8 +3309,12 @@ function submitAccessForm() {
     'Submitted via the Cowork Frontier internal guide.'
   ];
   const body = lines.join('\n');
-  const mailto = 'mailto:Ben.Kortman@damen.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  window.location.href = mailto;
+  const mailto = 'mailto:ben.kortman@damen.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  const a = document.createElement('a');
+  a.href = mailto;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 
   document.getElementById('accessForm').classList.remove('show');
   document.getElementById('accessButtonWrap').classList.add('show');
